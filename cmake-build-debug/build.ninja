@@ -91,6 +91,12 @@ build CMakeFiles/SP_Y2S2M5.dir/sources/SideCrossIterator.cpp.o: CXX_COMPILER__SP
   OBJECT_DIR = CMakeFiles/SP_Y2S2M5.dir
   OBJECT_FILE_DIR = CMakeFiles/SP_Y2S2M5.dir/sources
 
+build CMakeFiles/SP_Y2S2M5.dir/Test.cpp.o: CXX_COMPILER__SP_Y2S2M5_Debug /Users/nisimatiya/Desktop/מדעי$ המחשב/clion/System$ programming/SP_Y2S2M5/Test.cpp || cmake_object_order_depends_target_SP_Y2S2M5
+  DEP_FILE = CMakeFiles/SP_Y2S2M5.dir/Test.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/SP_Y2S2M5.dir
+  OBJECT_FILE_DIR = CMakeFiles/SP_Y2S2M5.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SP_Y2S2M5
@@ -99,7 +105,7 @@ build CMakeFiles/SP_Y2S2M5.dir/sources/SideCrossIterator.cpp.o: CXX_COMPILER__SP
 #############################################
 # Link the executable SP_Y2S2M5
 
-build SP_Y2S2M5: CXX_EXECUTABLE_LINKER__SP_Y2S2M5_Debug CMakeFiles/SP_Y2S2M5.dir/main.cpp.o CMakeFiles/SP_Y2S2M5.dir/Demo.cpp.o CMakeFiles/SP_Y2S2M5.dir/TestCounter.cpp.o CMakeFiles/SP_Y2S2M5.dir/sources/MagicalContainer.cpp.o CMakeFiles/SP_Y2S2M5.dir/sources/AscendingIterator.cpp.o CMakeFiles/SP_Y2S2M5.dir/sources/PrimeIterator.cpp.o CMakeFiles/SP_Y2S2M5.dir/sources/SideCrossIterator.cpp.o
+build SP_Y2S2M5: CXX_EXECUTABLE_LINKER__SP_Y2S2M5_Debug CMakeFiles/SP_Y2S2M5.dir/main.cpp.o CMakeFiles/SP_Y2S2M5.dir/Demo.cpp.o CMakeFiles/SP_Y2S2M5.dir/TestCounter.cpp.o CMakeFiles/SP_Y2S2M5.dir/sources/MagicalContainer.cpp.o CMakeFiles/SP_Y2S2M5.dir/sources/AscendingIterator.cpp.o CMakeFiles/SP_Y2S2M5.dir/sources/PrimeIterator.cpp.o CMakeFiles/SP_Y2S2M5.dir/sources/SideCrossIterator.cpp.o CMakeFiles/SP_Y2S2M5.dir/Test.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/SP_Y2S2M5.dir
   POST_BUILD = :

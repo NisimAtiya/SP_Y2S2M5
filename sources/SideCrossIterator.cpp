@@ -50,3 +50,7 @@ int MagicalContainer::SideCrossIterator::operator*() {
 MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operator++() {
     return *this;
 }
+
+MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operator=(MagicalContainer::SideCrossIterator &&other) {
+    return *this;
+}

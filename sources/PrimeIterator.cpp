@@ -22,8 +22,7 @@ MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() const {
 //----------------------------------------------------------------------------------------------------------------------
 
 
-MagicalContainer::PrimeIterator &
-MagicalContainer::PrimeIterator::operator=(const MagicalContainer::PrimeIterator &other) {
+MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator=(const MagicalContainer::PrimeIterator &other) {
     return *this;
 }
 
@@ -48,5 +47,9 @@ int MagicalContainer::PrimeIterator::operator*() {
 }
 
 MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
+    return *this;
+}
+
+MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator=(MagicalContainer::PrimeIterator &&other) {
     return *this;
 }

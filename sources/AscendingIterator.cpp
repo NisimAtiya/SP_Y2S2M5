@@ -22,8 +22,7 @@ MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() c
 //----------------------------------------------------------------------------------------------------------------------
 
 
-MagicalContainer::AscendingIterator &
-MagicalContainer::AscendingIterator::operator=(const MagicalContainer::AscendingIterator &other) {
+MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator=(const MagicalContainer::AscendingIterator &other) {
     return *this;
 }
 
@@ -48,5 +47,9 @@ int MagicalContainer::AscendingIterator::operator*() {
 }
 
 MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator++() {
+    return *this;
+}
+
+MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator=(MagicalContainer::AscendingIterator &&other) {
     return *this;
 }

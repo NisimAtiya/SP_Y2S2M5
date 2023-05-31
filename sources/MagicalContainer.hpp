@@ -37,7 +37,7 @@ class MagicalContainer {
             AscendingIterator(const AscendingIterator& other);
             ~AscendingIterator()= default;
             AscendingIterator(AscendingIterator&& other) = delete;   // Added move constructor deletion
-            AscendingIterator& operator=(AscendingIterator&& other) = delete;   // Added move assignment operator deletion
+            AscendingIterator& operator=(AscendingIterator&& other);
 
             AscendingIterator begin() const;
             AscendingIterator end() const;
@@ -70,7 +70,7 @@ class MagicalContainer {
         PrimeIterator(const PrimeIterator& other);
         ~PrimeIterator()= default;
         PrimeIterator(PrimeIterator&& other) = delete;   // Added move constructor deletion
-        PrimeIterator& operator=(PrimeIterator&& other) = delete;   // Added move assignment operator deletion
+        PrimeIterator& operator=(PrimeIterator&& other);
 
         PrimeIterator begin() const;
         PrimeIterator end() const;
@@ -102,7 +102,7 @@ class MagicalContainer {
         SideCrossIterator(const SideCrossIterator& other);
         ~SideCrossIterator()= default;
         SideCrossIterator(SideCrossIterator&& other) = delete;   // Added move constructor deletion
-        SideCrossIterator& operator=(SideCrossIterator&& other) = delete;   // Added move assignment operator deletion
+        SideCrossIterator& operator=(SideCrossIterator&& other);
 
 
         SideCrossIterator begin() const;
