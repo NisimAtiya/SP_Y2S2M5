@@ -50,6 +50,6 @@ MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operat
     return *this;
 }
 
-MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator=(MagicalContainer::AscendingIterator &&other) {
+MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator=(MagicalContainer::AscendingIterator &&other) noexcept{
     return *this;
 }

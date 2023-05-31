@@ -50,6 +50,6 @@ MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
     return *this;
 }
 
-MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator=(MagicalContainer::PrimeIterator &&other) {
+MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator=(MagicalContainer::PrimeIterator &&other)noexcept {
     return *this;
 }
