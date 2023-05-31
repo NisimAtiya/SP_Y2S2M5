@@ -4,11 +4,11 @@
 
 #include "MagicalContainer.hpp"
 
-void MagicalContainer::addElement(int i) {
+void MagicalContainer::addElement(int _i_) {
 
 }
 
-void MagicalContainer::removeElement(int i) {
+void MagicalContainer::removeElement(int _i_) {
 
 }
 

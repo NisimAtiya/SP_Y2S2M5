@@ -1,15 +1,15 @@
 #include "MagicalContainer.hpp"
 //Default constructor
 MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &container)
-        :container(container),size(0)
+        :container(container),index(0)
 {}
 //Default complete constructor
-MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &container,size_t size)
-        :container(container),size(size)
+MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &container,size_t index)
+        :container(container),index(index)
 {}
 //Copy constructor
 MagicalContainer::PrimeIterator::PrimeIterator(const MagicalContainer::PrimeIterator &other)
-        :container(other.container), size(other.size)
+        :container(other.container), index(other.index)
 {}
 //----------------------------------------------------------------------------------------------------------------------
 //Functions begin and end
@@ -17,7 +17,7 @@ MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::begin() const {
     return MagicalContainer::PrimeIterator(*this);
 }
 MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() const {
-    return MagicalContainer::PrimeIterator(this->container, this->size);
+    return MagicalContainer::PrimeIterator(this->container, this->container.size());
 }
 //----------------------------------------------------------------------------------------------------------------------
 

@@ -9,27 +9,35 @@
 #include <iostream>
 namespace ariel{}
 
-
+// Declare the MagicalContainer class
 class MagicalContainer {
     std::vector<int> container;
     std::vector<int> ordered;
 
     public:
-    MagicalContainer()= default;
-    void addElement(int i);
+    MagicalContainer()= default;    // Declare a default constructor
+    // Declare three public member functions: addElement, size, and removeElement
+    void addElement(int _i_);
     size_t size();
-    void removeElement(int i);
+    void removeElement(int _i_);
 
+//----------------------------------------------------------------------------------------------------------------------
+    // Declare the AscendingIterator nested class
     class AscendingIterator{
+        //reference to the MagicalContainer object that the iterator belongs to
         MagicalContainer &container;
-        size_t size;
+        //size of the container vector
+        size_t index;
 
 
         public:
+            // Declare constructors and destructor for the AscendingIterator class
             AscendingIterator(MagicalContainer& container);
             AscendingIterator(MagicalContainer& container, size_t index);
             AscendingIterator(const AscendingIterator& other);
             ~AscendingIterator()= default;
+            AscendingIterator(AscendingIterator&& other) = delete;   // Added move constructor deletion
+            AscendingIterator& operator=(AscendingIterator&& other) = delete;   // Added move assignment operator deletion
 
             AscendingIterator begin() const;
             AscendingIterator end() const;
@@ -43,16 +51,26 @@ class MagicalContainer {
             int operator*();
             AscendingIterator& operator++();
     };
+
+
+//----------------------------------------------------------------------------------------------------------------------
+    // Declare the PrimeIterator nested class
     class PrimeIterator{
+        //reference to the MagicalContainer object that the iterator belongs to
         MagicalContainer &container;
-        size_t size;
+        //size of the container vector
+        size_t index;
+
 
 
     public:
+        // Declare constructors and destructor for the AscendingIterator class
         PrimeIterator(MagicalContainer& container);
         PrimeIterator(MagicalContainer& container, size_t index);
         PrimeIterator(const PrimeIterator& other);
         ~PrimeIterator()= default;
+        PrimeIterator(PrimeIterator&& other) = delete;   // Added move constructor deletion
+        PrimeIterator& operator=(PrimeIterator&& other) = delete;   // Added move assignment operator deletion
 
         PrimeIterator begin() const;
         PrimeIterator end() const;
@@ -68,16 +86,24 @@ class MagicalContainer {
     };
 
 
+//----------------------------------------------------------------------------------------------------------------------
+    // Declare the PrimeIterator nested class
     class SideCrossIterator{
+        //reference to the MagicalContainer object that the iterator belongs to
         MagicalContainer &container;
-        size_t size;
+        //size of the container vector
+        size_t index;
 
 
     public:
+        // Declare constructors and destructor for the AscendingIterator class
         SideCrossIterator(MagicalContainer& container);
         SideCrossIterator(MagicalContainer& container, size_t index);
         SideCrossIterator(const SideCrossIterator& other);
         ~SideCrossIterator()= default;
+        SideCrossIterator(SideCrossIterator&& other) = delete;   // Added move constructor deletion
+        SideCrossIterator& operator=(SideCrossIterator&& other) = delete;   // Added move assignment operator deletion
+
 
         SideCrossIterator begin() const;
         SideCrossIterator end() const;
