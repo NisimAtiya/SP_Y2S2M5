@@ -12,20 +12,19 @@ namespace ariel{}
 // Declare the MagicalContainer class
 class MagicalContainer {
     std::vector<int> container;
-    std::vector<int> ordered;
 
     public:
     MagicalContainer()= default;    // Declare a default constructor
     // Declare three public member functions: addElement, size, and removeElement
     void addElement(int _i_);
-    size_t size();
+    size_t size(){return container.size();}
     void removeElement(int _i_);
 
 //----------------------------------------------------------------------------------------------------------------------
     // Declare the AscendingIterator nested class
     class AscendingIterator{
         //reference to the MagicalContainer object that the iterator belongs to
-        MagicalContainer &container;
+        MagicalContainer &Mcontainer;
         //size of the container vector
         size_t index;
 
@@ -49,7 +48,7 @@ class MagicalContainer {
             bool operator<(const AscendingIterator& other) const;
             bool operator>(const AscendingIterator& other) const;
             int operator*();
-            AscendingIterator& operator++();
+            AscendingIterator operator++();
     };
 
 
