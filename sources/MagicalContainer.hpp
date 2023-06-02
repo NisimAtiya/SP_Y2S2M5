@@ -7,12 +7,17 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <set>
 namespace ariel{}
 
 // Declare the MagicalContainer class
 class MagicalContainer {
-    std::vector<int> container;
+    std::set<int> elements;
+    std::vector<const int*> Order_container;
     std::vector<const int*> Prime_container;
+    std::vector<const int*> Sidecross_container;
+
+
 
 
     public:
@@ -20,7 +25,7 @@ class MagicalContainer {
     MagicalContainer()= default;    // Declare a default constructor
     // Declare three public member functions: addElement, size, and removeElement
     void addElement(int _i_);
-    size_t size(){return container.size();}
+    size_t size(){return Order_container.size();}
     void removeElement(int _i_);
 
 //----------------------------------------------------------------------------------------------------------------------

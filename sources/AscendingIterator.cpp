@@ -73,15 +73,15 @@ bool MagicalContainer::AscendingIterator::operator>(const MagicalContainer::Asce
 }
 
 int MagicalContainer::AscendingIterator::operator*() {
-    if (index > Mcontainer.container.size())
+    if (index > Mcontainer.Order_container.size())
     {
         throw std::out_of_range("Iterator out of range");
     }
-    return Mcontainer.container.at(index);
+    return *(Mcontainer.Order_container.at(index));
 }
 
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::operator++() {
-    if (index>= Mcontainer.container.size())
+    if (index>= Mcontainer.Order_container.size())
     {
         throw std::runtime_error("Iterator out of range");
     }

@@ -22,8 +22,7 @@ MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() c
 //----------------------------------------------------------------------------------------------------------------------
 
 
-MagicalContainer::SideCrossIterator &
-MagicalContainer::SideCrossIterator::operator=(const MagicalContainer::SideCrossIterator &other) {
+MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operator=(const MagicalContainer::SideCrossIterator &other) {
     return *this;
 }
 
