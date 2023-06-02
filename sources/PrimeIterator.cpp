@@ -91,7 +91,7 @@ MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
     return *this;
 }
 
-MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator=(MagicalContainer::PrimeIterator &&other)noexcept {
+MagicalContainer::PrimeIterator& MagicalContainer::PrimeIterator::operator=(MagicalContainer::PrimeIterator&& other) noexcept {
     if (this != &other) {
         Mcontainer = other.Mcontainer;
         index = other.index;

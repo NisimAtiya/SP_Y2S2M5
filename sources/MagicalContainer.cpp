@@ -14,7 +14,7 @@ void MagicalContainer::addElement(int _i_) {
     // Check if the element is prime
     if (is_prime(_i_)) {
         // Add the element to the Prime_container
-        Prime_container.push_back(&container.back());
+        Prime_container.push_back(&_i_);
 
         // Sort the Prime_container in ascending order
         std::sort(Prime_container.begin(), Prime_container.end(),
@@ -38,12 +38,15 @@ void MagicalContainer::removeElement(int _i_) {
 }
 
 bool MagicalContainer::is_prime(int num) {
-    if(num <=1) return false;
-    if(num==2) return true;
-    for (int _i_ = 3; _i_*_i_ < num; ++_i_)
+    if (num <=1)return false;
+    if (num == 2)return true;
+    for (int _j_ = 2; _j_ * _j_ <= num; _j_++)
     {
-        if (num % _i_ == 0)
+        if ((num % _j_) == 0)
+        {
+
             return false;
+        }
     }
 
     return true;

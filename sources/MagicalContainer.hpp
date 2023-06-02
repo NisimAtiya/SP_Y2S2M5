@@ -14,9 +14,9 @@ class MagicalContainer {
     std::vector<int> container;
     std::vector<const int*> Prime_container;
 
-    bool is_prime(int _i_);
 
     public:
+    static bool is_prime(int num);
     MagicalContainer()= default;    // Declare a default constructor
     // Declare three public member functions: addElement, size, and removeElement
     void addElement(int _i_);
