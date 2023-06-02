@@ -1,0 +1,45 @@
+#include <iostream>
+#include "sources/MagicalContainer.hpp"
+
+
+using namespace ariel;
+using namespace std;
+int main() {
+
+
+
+	MagicalContainer container;
+	std::cout << "Size of container: " << container.size() << std::endl;
+	container.addElement(17);
+	container.addElement(2);
+	container.addElement(25);
+	container.addElement(9);
+	container.addElement(3);
+	std::cout << "Size of container: " << container.size() << std::endl;
+	container.removeElement(3);
+	std::cout << "Size of container: " << container.size() << std::endl;
+
+
+
+	MagicalContainer::AscendingIterator ascIter(container);
+	auto it = ascIter.begin();
+	std::cout << *it <<endl;
+	auto it_end = ascIter.end();
+	std::cout << *it_end <<std::endl;
+	++it;
+	std::cout << *it <<std::endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}

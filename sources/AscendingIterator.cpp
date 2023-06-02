@@ -17,40 +17,85 @@ MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin()
     return MagicalContainer::AscendingIterator(this->Mcontainer,0);
 }
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() const {
-    return MagicalContainer::AscendingIterator(this->Mcontainer, this->Mcontainer.size()-1);
+    return MagicalContainer::AscendingIterator(this->Mcontainer, this->Mcontainer.size());
 }
 //----------------------------------------------------------------------------------------------------------------------
 
 
 MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator=(const MagicalContainer::AscendingIterator &other) {
-    return *this;
+    if (this != &other)
+    {
+        if (&Mcontainer != &other.Mcontainer)
+        {
+            throw std::runtime_error("Cannot assign iterators from different containers");
+        }
 
+        index = other.index;
+    }
+
+    return *this;
 }
 
 bool MagicalContainer::AscendingIterator::operator==(const MagicalContainer::AscendingIterator &other) const {
-    return other.index == this->index;
+    if (&Mcontainer != &other.Mcontainer)
+    {
+        throw std::runtime_error("Cannot compare iterators from different containers");
+    }
+
+    return index == other.index;
 }
 
 bool MagicalContainer::AscendingIterator::operator!=(const MagicalContainer::AscendingIterator &other) const {
-    return other.index != this->index;
+    if (&Mcontainer != &other.Mcontainer)
+    {
+        throw std::runtime_error("Cannot compare iterators from different containers");
+    }
+
+    return index != other.index;
 }
 
 bool MagicalContainer::AscendingIterator::operator<(const MagicalContainer::AscendingIterator &other) const {
-    return other.index < this->index;
+    if (&Mcontainer != &other.Mcontainer)
+    {
+        throw std::runtime_error("Cannot compare iterators from different containers");
+    }
+
+    return index < other.index;
 }
 
 bool MagicalContainer::AscendingIterator::operator>(const MagicalContainer::AscendingIterator &other) const {
-    return other.index > this->index;
+    if (&Mcontainer != &other.Mcontainer)
+    {
+        throw std::runtime_error("Cannot compare iterators from different containers");
+    }
+
+    return index > other.index;
 }
 
 int MagicalContainer::AscendingIterator::operator*() {
-    return this->Mcontainer.container.at(this->index);
+    if (index > Mcontainer.container.size())
+    {
+        throw std::out_of_range("Iterator out of range");
+    }
+    return Mcontainer.container.at(index);
 }
 
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::operator++() {
-    return AscendingIterator(this->Mcontainer, this->index+1);
-}
-
-MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator=(MagicalContainer::AscendingIterator &&other) noexcept{
+    if (index>= Mcontainer.container.size())
+    {
+        throw std::runtime_error("Iterator out of range");
+    }
+    index++;
     return *this;
 }
+
+MagicalContainer::AscendingIterator& MagicalContainer::AscendingIterator::operator=(MagicalContainer::AscendingIterator &&other) noexcept {
+    if (this != &other) {
+        Mcontainer = other.Mcontainer;
+        index = other.index;
+    }
+    return *this;
+}
+
+
+
