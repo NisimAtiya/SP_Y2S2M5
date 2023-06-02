@@ -12,6 +12,9 @@ namespace ariel{}
 // Declare the MagicalContainer class
 class MagicalContainer {
     std::vector<int> container;
+    std::vector<const int*> Prime_container;
+
+    bool is_prime(int _i_);
 
     public:
     MagicalContainer()= default;    // Declare a default constructor
@@ -56,7 +59,7 @@ class MagicalContainer {
     // Declare the PrimeIterator nested class
     class PrimeIterator{
         //reference to the MagicalContainer object that the iterator belongs to
-        MagicalContainer &container;
+        MagicalContainer &Mcontainer;
         //size of the container vector
         size_t index;
 
