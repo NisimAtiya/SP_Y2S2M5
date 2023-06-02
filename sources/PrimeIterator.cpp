@@ -17,7 +17,7 @@ MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::begin() const {
     return MagicalContainer::PrimeIterator(*this);
 }
 MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() const {
-    return MagicalContainer::PrimeIterator(this->Mcontainer, this->Mcontainer.size());
+    return MagicalContainer::PrimeIterator(this->Mcontainer, this->Mcontainer.Prime_container.size());
 }
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -73,7 +73,8 @@ bool MagicalContainer::PrimeIterator::operator>(const MagicalContainer::PrimeIte
 }
 
 int MagicalContainer::PrimeIterator::operator*() {
-    if (index > Mcontainer.Prime_container.size())
+
+    if (index >= Mcontainer.Prime_container.size())
     {
         throw std::out_of_range("Iterator out of range");
     }
@@ -82,6 +83,7 @@ int MagicalContainer::PrimeIterator::operator*() {
 }
 
 MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
+
     if (index >= Mcontainer.Prime_container.size())
     {
         throw std::runtime_error("Iterator out of range");

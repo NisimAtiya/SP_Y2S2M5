@@ -20,12 +20,12 @@ class MagicalContainer {
 
 
 
-    public:
+public:
     static bool is_prime(int num);
     MagicalContainer()= default;    // Declare a default constructor
     // Declare three public member functions: addElement, size, and removeElement
     void addElement(int _i_);
-    size_t size(){return Order_container.size();}
+    size_t size(){return elements.size();}
     void removeElement(int _i_);
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -37,26 +37,26 @@ class MagicalContainer {
         size_t index;
 
 
-        public:
-            // Declare constructors and destructor for the AscendingIterator class
-            AscendingIterator(MagicalContainer& container);
-            AscendingIterator(MagicalContainer& container, size_t index);
-            AscendingIterator(const AscendingIterator& other);
-            ~AscendingIterator()= default;
-            AscendingIterator(AscendingIterator&& other) = delete;   // Added move constructor deletion
-            AscendingIterator& operator=(AscendingIterator&& other)noexcept;
+    public:
+        // Declare constructors and destructor for the AscendingIterator class
+        AscendingIterator(MagicalContainer& container);
+        AscendingIterator(MagicalContainer& container, size_t index);
+        AscendingIterator(const AscendingIterator& other);
+        ~AscendingIterator()= default;
+        AscendingIterator(AscendingIterator&& other) = delete;   // Added move constructor deletion
+        AscendingIterator& operator=(AscendingIterator&& other)noexcept;
 
-            AscendingIterator begin() const;
-            AscendingIterator end() const;
+        AscendingIterator begin() const;
+        AscendingIterator end() const;
 
 
-            AscendingIterator& operator=(const AscendingIterator& other);
-            bool operator==(const AscendingIterator& other) const;
-            bool operator!=(const AscendingIterator& other) const;
-            bool operator<(const AscendingIterator& other) const;
-            bool operator>(const AscendingIterator& other) const;
-            int operator*();
-            AscendingIterator operator++();
+        AscendingIterator& operator=(const AscendingIterator& other);
+        bool operator==(const AscendingIterator& other) const;
+        bool operator!=(const AscendingIterator& other) const;
+        bool operator<(const AscendingIterator& other) const;
+        bool operator>(const AscendingIterator& other) const;
+        int operator*();
+        AscendingIterator operator++();
     };
 
 

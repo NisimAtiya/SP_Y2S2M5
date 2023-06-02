@@ -1,15 +1,15 @@
 #include "MagicalContainer.hpp"
 //Default constructor
 MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &container)
-:Mcontainer(container),index(0)
+        :Mcontainer(container),index(0)
 {}
 //Default complete constructor
 MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &container,size_t index)
-:Mcontainer(container),index(index)
+        :Mcontainer(container),index(index)
 {}
 //Copy constructor
 MagicalContainer::AscendingIterator::AscendingIterator(const MagicalContainer::AscendingIterator &other)
-:Mcontainer(other.Mcontainer), index(other.index)
+        :Mcontainer(other.Mcontainer), index(other.index)
 {}
 //----------------------------------------------------------------------------------------------------------------------
 //Functions begin and end
@@ -96,6 +96,5 @@ MagicalContainer::AscendingIterator& MagicalContainer::AscendingIterator::operat
     }
     return *this;
 }
-
 
 

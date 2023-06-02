@@ -29,6 +29,14 @@ int main() {
 	++it;
 	std::cout << *it <<std::endl;
 
+	MagicalContainer::PrimeIterator ascIter(container);
+    	auto it_p = ascIter.begin();
+    	std::cout << *it_p <<endl;
+    	++it_p;
+        std::cout << *it_p <<endl;
+        ++it_p;
+        std::cout << *it_p <<endl;
+
 
 
 

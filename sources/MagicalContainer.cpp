@@ -7,14 +7,13 @@
 
 void MagicalContainer::addElement(int _i_) {
     auto in = elements.insert(_i_);
-    if (in.second)
-    {
+
+    if (in.second) {
         const int* address = &(*in.first);
 
         Order_container.push_back(address);
 
-        if (is_prime(_i_))
-        {
+        if (is_prime(_i_)) {
             Prime_container.push_back(address);
             sort(Prime_container.begin(), Prime_container.end(), [](const int* a, const int* b) { return *a < *b; });
         }
@@ -22,28 +21,28 @@ void MagicalContainer::addElement(int _i_) {
         sort(Order_container.begin(), Order_container.end(), [](const int* a, const int* b) { return *a < *b; });
 
         Sidecross_container.clear();
-        Sidecross_container.reserve(Sidecross_container.size());
+        Sidecross_container.reserve(Order_container.size());
 
-        size_t start = 0, end = Sidecross_container.size() - 1;
+        size_t start = 0, end = Order_container.size() - 1;
 
-        if (Sidecross_container.size() == 1)
-            Sidecross_container.push_back(Sidecross_container.at(0));
+        if (!Order_container.empty()) {  // Check if the vector is not empty
+            if (Order_container.size() == 1)
+                Sidecross_container.push_back(Order_container.at(0));
+            else {
+                while (start <= end && end != 0) {
+                    Sidecross_container.push_back(Order_container.at(start));
 
-        else
-        {
-            while (start <= end && end != 0)
-            {
-                Sidecross_container.push_back(Sidecross_container.at(start));
+                    if (start != end)
+                        Sidecross_container.push_back(Order_container.at(end));
 
-                if (start != end)
-                    Sidecross_container.push_back(Sidecross_container.at(end));
-
-                start++;
-                end--;
+                    start++;
+                    end--;
+                }
             }
         }
     }
 }
+
 
 void MagicalContainer::removeElement(int _i_) {
 //    // Find the position of the member to extract
