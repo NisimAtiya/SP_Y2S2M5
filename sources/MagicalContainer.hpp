@@ -56,7 +56,7 @@ public:
         bool operator<(const AscendingIterator& other) const;
         bool operator>(const AscendingIterator& other) const;
         int operator*();
-        AscendingIterator operator++();
+        AscendingIterator& operator++();
     };
 
 

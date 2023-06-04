@@ -25,7 +25,7 @@ void MagicalContainer::addElement(int _i_) {
 
         size_t start = 0, end = Order_container.size() - 1;
 
-        if (!Order_container.empty()) {  // Check if the vector is not empty
+        if (!Order_container.empty()) {
             if (Order_container.size() == 1)
                 Sidecross_container.push_back(Order_container.at(0));
             else {
@@ -52,35 +52,29 @@ void MagicalContainer::removeElement(int _i_) {
     }
     elements.erase(_i_);
 
-    // Handle prime order
-    if (is_prime(_i_))
-    {
+    if (is_prime(_i_)){
         auto it_prime = find(Prime_container.begin(), Prime_container.end(), &(*it));
         Prime_container.erase(it_prime);
     }
 
-    // Handle ascending order
     auto it_ascending = find(Order_container.begin(), Order_container.end(), &(*it));
     Order_container.erase(it_ascending);
 
-    // Handle sidecross order
     Sidecross_container.clear();
     Sidecross_container.reserve(elements.size());
 
     size_t start = 0, end = size() - 1;
 
-    if (size() == 1)
+    if (size() == 1) {
         Sidecross_container.push_back(Order_container.at(0));
-
-    else
-    {
-        while (start <= end && end != 0)
-        {
+    }
+    else{
+        while (start <= end && end != 0){
             Sidecross_container.push_back(Order_container.at(start));
 
-            if (start != end)
+            if (start != end) {
                 Sidecross_container.push_back(Order_container.at(end));
-
+            }
             start++;
             end--;
         }
