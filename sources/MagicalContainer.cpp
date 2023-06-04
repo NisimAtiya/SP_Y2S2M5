@@ -45,14 +45,46 @@ void MagicalContainer::addElement(int _i_) {
 
 
 void MagicalContainer::removeElement(int _i_) {
-//    // Find the position of the member to extract
-//    auto extractPos = std::lower_bound(Order_container.begin(), Order_container.end(), _i_);
-//
-//    // Check if the member was found
-//    if (extractPos != Order_container.end() && *extractPos == _i_) {
-//        // Extract the member from the vector
-//        Order_container.erase(extractPos);
-//    }
+    auto it = elements.find(_i_);
+
+    if (it == elements.end()) {
+        throw std::runtime_error("Element not found");
+    }
+    elements.erase(_i_);
+
+    // Handle prime order
+    if (is_prime(_i_))
+    {
+        auto it_prime = find(Prime_container.begin(), Prime_container.end(), &(*it));
+        Prime_container.erase(it_prime);
+    }
+
+    // Handle ascending order
+    auto it_ascending = find(Order_container.begin(), Order_container.end(), &(*it));
+    Order_container.erase(it_ascending);
+
+    // Handle sidecross order
+    Sidecross_container.clear();
+    Sidecross_container.reserve(elements.size());
+
+    size_t start = 0, end = size() - 1;
+
+    if (size() == 1)
+        Sidecross_container.push_back(Order_container.at(0));
+
+    else
+    {
+        while (start <= end && end != 0)
+        {
+            Sidecross_container.push_back(Order_container.at(start));
+
+            if (start != end)
+                Sidecross_container.push_back(Order_container.at(end));
+
+            start++;
+            end--;
+        }
+    }
 
 }
 

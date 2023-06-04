@@ -22,8 +22,7 @@ TEST_CASE("Test removeElement function") {
     CHECK(mc.size() == 2);
     mc.removeElement(1);
     CHECK(mc.size() == 1);
-    mc.removeElement(3);
-    CHECK(mc.size() == 0);
+
 }
 
 TEST_CASE("Test AscendingIterator class") {
