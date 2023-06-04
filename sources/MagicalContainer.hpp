@@ -97,7 +97,7 @@ public:
     // Declare the PrimeIterator nested class
     class SideCrossIterator{
         //reference to the MagicalContainer object that the iterator belongs to
-        MagicalContainer &container;
+        MagicalContainer &Mcontainer;
         //size of the container vector
         size_t index;
 

@@ -14,7 +14,7 @@ MagicalContainer::PrimeIterator::PrimeIterator(const MagicalContainer::PrimeIter
 //----------------------------------------------------------------------------------------------------------------------
 //Functions begin and end
 MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::begin() const {
-    return MagicalContainer::PrimeIterator(*this);
+    return MagicalContainer::PrimeIterator(this->Mcontainer,0);
 }
 MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() const {
     return MagicalContainer::PrimeIterator(this->Mcontainer, this->Mcontainer.Prime_container.size());
